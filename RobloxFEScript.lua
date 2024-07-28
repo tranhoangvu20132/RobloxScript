@@ -20,6 +20,15 @@ local ModifiedJumpPower = 100
 local ModifiedJumpHeight = 100
 local ModifiedLowGravity = 50
 
+local function Noclip(State)
+		LocalPlayer.Character.HumanoidRootPart.CanCollide = State
+		for i, v in pairs(LocalPlayer.Character:GetChildren()) do
+			if v:IsA("MeshPart") then
+				v.CanCollide = State
+			end
+		end
+	end
+
 local ArrayField = loadstring(game:HttpGet('https://raw.githubusercontent.com/UI-Interface/ArrayField/main/Source.lua'))()
 local Window = ArrayField:CreateWindow({
    Name = "Roblox FE Script",
